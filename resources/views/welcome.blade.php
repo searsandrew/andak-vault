@@ -39,7 +39,7 @@
                             {{ __('Verify the validity of Andak certification numbers using the form field. Always confirm certification numbers for collectibles purchased online after receipt.') }}
                         </p>
 
-                        <form method="post" action="{{ route('item.lookup') }}" class="flex flex-row items-start space-x-3 w-2/3">
+                        <form method="post" action="{{ route('item.certify') }}" class="flex flex-row items-start space-x-3 w-2/3">
                             @csrf
                             <span class="flex flex-auto flex-col">
                                 <input type="text" name="search" value="{{ old('search') }}" class="flex-auto px-3 py-2 rounded-lg border border-slate-100 @error('search') border-red-800 @enderror" />

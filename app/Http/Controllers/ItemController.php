@@ -8,14 +8,8 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    public function verify(ItemRequest $request)
+    public function certify(ItemRequest $request)
     {
-        $item = Item::where('ulid', $request->search)->orWhere('card_number', $request->search)->get();
-        if($item->count() > 0)
-        {
-            return redirect(route('item.show', $item));
-        }
-
-        return redirect(route('welcome'))->with('error', sprintf('%s not found.', $request->search));
+        return redirect(route('item.show', Item::where('card_number', $request->search)->first()));
     }
 }

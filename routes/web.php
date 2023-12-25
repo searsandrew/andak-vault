@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/lookup', [ItemController::class, 'verify'])->name('item.lookup');
-Route::get('/lookup/{search}')->name('item.search');
+Route::post('/certify', [ItemController::class, 'certify'])->name('item.certify');
+Route::get('/{item}', [ItemController::class, 'show'])->name('item.show');
