@@ -6,7 +6,21 @@ export default {
         "./resources/**/*.vue",
     ],
   theme: {
-    extend: {},
+    extend: {
+        colors: {
+            'andak': {
+                'light': '#de6033',
+                DEFAULT: '#BF491F',
+                'dark': '#933818',
+            },
+            'andak-extended': {
+                'yellow': '#F2C53D',
+                'green': '#45735D',
+                'olive': '#8A8C3F',
+                'mush': '#BCBF5E',
+            }
+        },
+    },
   },
   plugins: [],
 }
