@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->ulid('id');
+            $table->ulid('id')->unique();
             $table->foreignUlid('type_id')->constrained();
             $table->integer('cert_id')->unsigned();
             $table->string('game_name');
