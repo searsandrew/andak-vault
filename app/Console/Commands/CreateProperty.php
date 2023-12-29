@@ -2,27 +2,26 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Type;
+use App\Models\Property;
 use Illuminate\Console\Command;
-use function Laravel\Prompts\text;
 use function Laravel\Prompts\info;
-use function Laravel\Prompts\error;
+use function Laravel\Prompts\text;
 
-class CreateType extends Command
+class CreateProperty extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'vault:create-type';
+    protected $signature = 'vault:create-property';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Add a new type of vault object';
+    protected $description = 'Add a new property to the vault';
 
     /**
      * Execute the console command.
@@ -30,15 +29,14 @@ class CreateType extends Command
     public function handle()
     {
         $name = text(
-            label: 'What is this type\'s name?',
+            label: 'What is the name of this property?',
             required: true
         );
 
-
-        if(Type::create([
+        if(Property::create([
             'name' => $name,
         ])) {
-            info('New type has been added.');
+            info('New property has been added.');
         }
     }
 }

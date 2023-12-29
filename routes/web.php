@@ -18,5 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/certify', [ItemController::class, 'certify'])->name('item.certify');
+Route::post('/certify', function () {
+
+})->name('item.certify');
+
 Route::get('/{item}', [ItemController::class, 'show'])->name('item.show');

@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->ulid('id')->unique();
             $table->foreignUlid('type_id')->constrained();
-            $table->integer('cert_id')->unsigned();
-            $table->string('game_name');
-            $table->string('card_name');
-            $table->string('card_number');
-            $table->string('card_rating');
-            $table->string('set_name');
+            $table->foreignUlid('property_id')->constrained();
+            $table->foreignUlid('product_id')->constrained();
+            $table->integer('cert_id')->unsigned()->unique();
+            $table->string('item_name');
+            $table->string('item_number');
+            $table->string('item_rating');
             $table->datetime('signed_at')->nullable();
             $table->timestamps();
             $table->softDeletes();

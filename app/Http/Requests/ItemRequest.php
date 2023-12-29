@@ -36,7 +36,7 @@ class ItemRequest extends FormRequest
      */
     public function rules(): array
     {
-        $items = Item::all()->pluck('card_number')->toArray();
+        $items = Item::all()->pluck('cert_id')->toArray();
 
         return [
             'search' => [
